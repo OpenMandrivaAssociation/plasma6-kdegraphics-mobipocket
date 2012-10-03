@@ -1,6 +1,6 @@
 Name:		kdegraphics-mobipocket
 Summary:	A collection of plugins to handle mobipocket files
-Version: 4.9.0
+Version: 4.9.2
 Release: 1
 Epoch:		2
 Group:		Graphical desktop/KDE
