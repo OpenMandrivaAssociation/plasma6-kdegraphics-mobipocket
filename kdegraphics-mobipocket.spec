@@ -1,14 +1,13 @@
-Name:		kdegraphics-mobipocket
 Summary:	A collection of plugins to handle mobipocket files
+Name:		kdegraphics-mobipocket
 Version:	4.12.1
 Release:	1
 Epoch:		2
+License:	GPLv2+
 Group:		Graphical desktop/KDE
-License:	GPLv2
-URL:		http://www.kde.org
+Url:		http://www.kde.org
 Source:		ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	kdelibs4-devel
-BuildRequires:	okular-devel
 BuildRequires:	pkgconfig(libstreams)
 Conflicts:	kdegraiphics4-core < 2:4.6.90
 Obsoletes:	mobipocket < 2:4.8.0
@@ -17,13 +16,42 @@ Obsoletes:	mobipocket < 2:4.8.0
 A collection of plugins to handle mobipocket files.
 
 %files
+%doc COPYING
 %{_kde_libdir}/kde4/mobithumbnail.so
-%{_kde_libdir}/kde4/okularGenerator_mobi.so
 %{_kde_libdir}/strigi/strigila_mobi.so
-%{_kde_applicationsdir}/okularApplication_mobi.desktop
-%{_kde_services}/libokularGenerator_mobi.desktop
 %{_kde_services}/mobithumbnail.desktop
-%{_kde_services}/okularMobi.desktop
+
+#----------------------------------------------------------------------
+
+%define major 1
+%define libqmobipocket %mklibname qmobipocket %{major}
+
+%package -n %{libqmobipocket}
+Summary:	QMobipocket library
+Group:		System/Libraries
+
+%description -n %{libqmobipocket}
+QMobipocket library.
+
+%files -n %{libqmobipocket}
+%{_kde_libdir}/libqmobipocket.so.%{major}*
+
+#----------------------------------------------------------------------
+
+%define devqmobipocket %mklibname qmobipocket -d
+
+%package -n %{devqmobipocket}
+Summary:	Development files for QMobipocket
+Group:		System/Libraries
+Requires:	%{libqmobipocket} = %{EVRD}
+
+%description -n %{devqmobipocket}
+Development files for QMobipocket.
+
+%files -n %{devqmobipocket}
+%{_kde_includedir}/qmobipocket/
+%{_kde_libdir}/libqmobipocket.so
+%{_kde_libdir}/cmake/QMobipocket/
 
 #----------------------------------------------------------------------
 
@@ -40,6 +68,8 @@ A collection of plugins to handle mobipocket files.
 %changelog
 * Tue Jan 14 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 2:4.12.1-1
 - New version 4.12.1
+- No longer requires okular-devel to build
+- New library and devel subpackages for QMobipocket
 
 * Wed Dec 04 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 2:4.11.4-1
 - New version 4.11.4
