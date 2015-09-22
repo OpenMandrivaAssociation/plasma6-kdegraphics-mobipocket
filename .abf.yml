@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   kdegraphics-mobipocket-15.08.0.tar.xz: 05bf2216fa46ad5a4e0ed17230033fdad334233a
+sources:
+  kdegraphics-mobipocket-15.08.1.tar.xz: 5be2506074cfcb5eef314737f3082db86c290df7
