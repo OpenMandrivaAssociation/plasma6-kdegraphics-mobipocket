@@ -1,13 +1,17 @@
 Summary:	A collection of plugins to handle mobipocket files
 Name:		kdegraphics-mobipocket
-Version:	16.08.3
+Version:	16.12.1
 Release:	1
 Epoch:		2
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://www.kde.org
-Source:		http://download.kde.org/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
-BuildRequires:	kdelibs-devel
+Source0:	http://download.kde.org/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
+BuildRequires:	cmake(ECM)
+BuildRequires:	cmake(Qt5Core)
+BuildRequires:	cmake(Qt5Gui)
+BuildRequires:	cmake(KF5KIO)
+BuildRequires:	ninja
 BuildRequires:	pkgconfig(libstreams)
 Conflicts:	kdegraiphics4-core < 2:4.6.90
 Obsoletes:	mobipocket < 2:4.8.0
@@ -17,13 +21,12 @@ A collection of plugins to handle mobipocket files.
 
 %files
 %doc COPYING
-%{_kde_libdir}/kde4/mobithumbnail.so
-%{_kde_libdir}/strigi/strigila_mobi.so
-%{_kde_services}/mobithumbnail.desktop
+%{_libdir}/qt5/plugins/mobithumbnail.so
+%{_datadir}/kservices5/mobithumbnail.desktop
 
 #----------------------------------------------------------------------
 
-%define major 1
+%define major 2
 %define libqmobipocket %mklibname qmobipocket %{major}
 
 %package -n %{libqmobipocket}
@@ -34,7 +37,7 @@ Group:		System/Libraries
 QMobipocket library.
 
 %files -n %{libqmobipocket}
-%{_kde_libdir}/libqmobipocket.so.%{major}*
+%{_libdir}/libqmobipocket.so.%{major}*
 
 #----------------------------------------------------------------------
 
@@ -51,9 +54,9 @@ Requires:	kdelibs-devel
 Development files for QMobipocket.
 
 %files -n %{devqmobipocket}
-%{_kde_includedir}/qmobipocket/
-%{_kde_libdir}/libqmobipocket.so
-%{_kde_libdir}/cmake/QMobipocket/
+%{_includedir}/qmobipocket/
+%{_libdir}/libqmobipocket.so
+%{_libdir}/cmake/QMobipocket/
 
 #----------------------------------------------------------------------
 
@@ -61,8 +64,8 @@ Development files for QMobipocket.
 %setup -q
 
 %build
-%cmake_kde4 -DCMAKE_MINIMUM_REQUIRED_VERSION=2.6
-%make
+%cmake_kde5
+%ninja
 
 %install
-%makeinstall_std -C build
+%ninja_install -C build
