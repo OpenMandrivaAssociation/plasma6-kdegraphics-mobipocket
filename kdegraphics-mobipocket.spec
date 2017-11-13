@@ -19,7 +19,7 @@ BuildRequires:	cmake(Qt5Gui)
 BuildRequires:	cmake(KF5KIO)
 BuildRequires:	ninja
 BuildRequires:	pkgconfig(libstreams)
-Conflicts:	kdegraiphics4-core < 2:4.6.90
+Conflicts:	kdegraphics4-core < 2:4.6.90
 Obsoletes:	mobipocket < 2:4.8.0
 
 %description
