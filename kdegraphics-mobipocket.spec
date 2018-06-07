@@ -1,6 +1,6 @@
 Summary:	A collection of plugins to handle mobipocket files
 Name:		kdegraphics-mobipocket
-Version:	 17.12.2
+Version:	18.04.2
 Release:	1
 Epoch:		2
 License:	GPLv2+
@@ -18,7 +18,6 @@ BuildRequires:	cmake(Qt5Core)
 BuildRequires:	cmake(Qt5Gui)
 BuildRequires:	cmake(KF5KIO)
 BuildRequires:	ninja
-BuildRequires:	pkgconfig(libstreams)
 Conflicts:	kdegraphics4-core < 2:4.6.90
 Obsoletes:	mobipocket < 2:4.8.0
 
