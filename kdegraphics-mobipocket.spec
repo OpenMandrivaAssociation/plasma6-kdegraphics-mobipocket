@@ -53,7 +53,6 @@ Summary:	Development files for QMobipocket
 Group:		System/Libraries
 Requires:	%{libqmobipocket} = %{EVRD}
 Provides:	qmobipocket-devel = %{EVRD}
-Requires:	kdelibs-devel
 
 %description -n %{devqmobipocket}
 Development files for QMobipocket.
