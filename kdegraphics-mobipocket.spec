@@ -1,6 +1,6 @@
 Summary:	A collection of plugins to handle mobipocket files
 Name:		kdegraphics-mobipocket
-Version:	18.04.3
+Version:	18.07.80
 Release:	1
 Epoch:		2
 License:	GPLv2+
