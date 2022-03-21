@@ -1,6 +1,6 @@
 Summary:	A collection of plugins to handle mobipocket files
 Name:		kdegraphics-mobipocket
-Version:	21.12.2
+Version:	22.03.80
 Release:	1
 Epoch:		2
 License:	GPLv2+
@@ -26,9 +26,6 @@ A collection of plugins to handle mobipocket files.
 
 %files
 %doc COPYING
-%{_libdir}/qt5/plugins/mobithumbnail.so
-%{_datadir}/kservices5/mobithumbnail.desktop
-%{_datadir}/metainfo/org.kde.kdegraphics-mobipocket.metainfo.xml
 
 #----------------------------------------------------------------------
 
