@@ -1,7 +1,7 @@
 Summary:	A collection of plugins to handle mobipocket files
 Name:		kdegraphics-mobipocket
-Version:	22.12.3
-Release:	2
+Version:	23.03.90
+Release:	1
 Epoch:		2
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -56,7 +56,7 @@ Provides:	qmobipocket-devel = %{EVRD}
 Development files for QMobipocket.
 
 %files -n %{devqmobipocket}
-%{_includedir}/qmobipocket/
+%{_includedir}/QMobipocket/
 %{_libdir}/libqmobipocket.so
 %{_libdir}/cmake/QMobipocket/
 
