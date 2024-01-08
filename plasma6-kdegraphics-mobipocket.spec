@@ -15,6 +15,7 @@ Source0:	http://download.kde.org/%{ftpdir}/release-service/%{version}/src/kdegra
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(Qt6)
 BuildRequires:	cmake(Qt6Core)
+BuildRequires:	cmake(Qt6Core5Compat)
 BuildRequires:	cmake(Qt6Gui)
 BuildRequires:	cmake(KF6KIO)
 BuildRequires:	ninja
