@@ -27,7 +27,7 @@ A collection of plugins to handle mobipocket files.
 
 #----------------------------------------------------------------------
 
-%define libqmobipocket %mklibname qmobipocket
+%define libqmobipocket %mklibname QMobipocket6
 
 %package -n %{libqmobipocket}
 Summary:	QMobipocket library
@@ -37,11 +37,11 @@ Group:		System/Libraries
 QMobipocket library.
 
 %files -n %{libqmobipocket}
-%{_libdir}/libqmobipocket.so*
+%{_libdir}/libQMobipocket6.so*
 
 #----------------------------------------------------------------------
 
-%define devqmobipocket %mklibname qmobipocket -d
+%define devqmobipocket %mklibname QMobipocket6 -d
 
 %package -n %{devqmobipocket}
 Summary:	Development files for QMobipocket
@@ -53,8 +53,8 @@ Provides:	qmobipocket-devel = %{EVRD}
 Development files for QMobipocket.
 
 %files -n %{devqmobipocket}
-%{_includedir}/QMobipocket/
-%{_libdir}/cmake/QMobipocket/
+%{_includedir}/QMobipocket6/
+%{_libdir}/cmake/QMobipocket6/
 
 #----------------------------------------------------------------------
 
@@ -62,6 +62,7 @@ Development files for QMobipocket.
 %autosetup -p1 -n kdegraphics-mobipocket-%{version}
 %cmake \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
+	-DQT_MAJOR_VERSION=6 \
 	-G Ninja
 
 %build
