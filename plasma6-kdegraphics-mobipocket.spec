@@ -4,7 +4,7 @@
 Summary:	A collection of plugins to handle mobipocket files
 Name:		plasma6-kdegraphics-mobipocket
 Version:	24.12.3
-Release:	%{?git:0.%{git}.}1
+Release:	%{?git:0.%{git}.}2
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org
