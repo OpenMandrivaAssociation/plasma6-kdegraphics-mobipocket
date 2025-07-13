@@ -3,7 +3,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 Summary:	A collection of plugins to handle mobipocket files
 Name:		kdegraphics-mobipocket
-Version:	25.04.0
+Version:	25.04.3
 Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -25,7 +25,9 @@ BuildRequires:	cmake(Qt6Core)
 BuildRequires:	cmake(Qt6Core5Compat)
 BuildRequires:	cmake(Qt6Gui)
 BuildRequires:	cmake(KF6KIO)
-BuildRequires:	ninja
+%rename plasma6-kdegraphics-mobipocket
+BuildSystem:	cmake
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %description
 A collection of plugins to handle mobipocket files.
@@ -69,7 +71,6 @@ Development files for QMobipocket.
 %prep
 %autosetup -p1 -n kdegraphics-mobipocket-%{?git:%{gitbranchd}}%{!?git:%{version}}
 %cmake \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
 	-DQT_MAJOR_VERSION=6 \
 	-G Ninja
 
